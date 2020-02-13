@@ -1,4 +1,4 @@
-class Apt::V1::QuestionsController < ApplicationController
+class Api::V1::QuestionsController < ApplicationController
 
     def index
         @questions = Question.all
