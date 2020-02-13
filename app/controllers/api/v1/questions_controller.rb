@@ -16,6 +16,6 @@ class Apt::V1::QuestionsController < ApplicationController
     private
 
     def question_params
-        params.require(:question).permit(:ask, :dont_ask)
+        params.require(:question).permit(:ask, :dont_ask, :user_id)
     end
 end
