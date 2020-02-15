@@ -10,7 +10,8 @@ class Questions {
         this.adapter
         .getQuestions()
         .then(questions => {
-            questions.forEach(question => this.questions.push(question))
+            questions.forEach(question => this.questions.push(new Question(question)))
+            console.log(this.questions)
         })
         .then(() => {
             this.render()
