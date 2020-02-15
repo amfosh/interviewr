@@ -1,7 +1,7 @@
 class Questions {
     constructor() {
         this.questions =[]
-        this.adapter = new NotesAdapter()
+        this.adapter = new QuestionsAdapter()
         // this.bindEventListeners()
         this.fetchAndLoadQuestions()
     }
