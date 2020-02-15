@@ -1,13 +1,12 @@
 class Questions {
     constructor() {
-        this.questions =[]
+        this.questions = []
         this.adapter = new QuestionsAdapter()
         // this.bindEventListeners()
         this.fetchAndLoadQuestions()
     }
-
     fetchAndLoadQuestions(){
-        this.adapter.getNotes().then(questions => {
+        this.adapter.getQuestions().then(questions => {
             console.log(questions)
         })
     }
