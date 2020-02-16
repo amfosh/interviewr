@@ -2,7 +2,6 @@ class Questions {
     constructor() {
         this.questions = []
         this.adapter = new QuestionsAdapter()
-        // this.bindEventListeners()
         this.fetchAndLoadQuestions()
     }
 
@@ -11,7 +10,6 @@ class Questions {
         .getQuestions()
         .then(questions => {
             questions.forEach(question => this.questions.push(new Question(question)))
-            console.log(this.questions)
         })
         .then(() => {
             this.render()
@@ -20,7 +18,6 @@ class Questions {
 
     render() {
         const questionDisplay = document.getElementById('questionDisplay')
-        questionDisplay.innerHTML = 'Questions go here'
-        console.log('My questions are', this.questions)
+        questionDisplay.innerHTML = this.questions.map(question => `<li>${question.content}</li>`).join('')
     }
 }

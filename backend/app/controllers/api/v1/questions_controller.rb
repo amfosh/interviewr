@@ -2,8 +2,11 @@ class Api::V1::QuestionsController < ApplicationController
 
     def index
         @questions = Question.all
-
+        # @ask_questions = Question.ask 
+        # @dont_ask_questions = Question.dont_ask
         render json: @questions
+        # render json: @ask_questions
+        # render json: @dont_ask_questions
     end
 
     def create
