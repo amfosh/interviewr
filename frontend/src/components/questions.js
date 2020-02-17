@@ -1,9 +1,11 @@
+var done = false;
+
 class Questions {
     constructor() {
         this.questions = []
         this.adapter = new QuestionsAdapter()
         this.fetchAndLoadQuestions()
-        this.newQuestion()
+        // this.newQuestion()
     }
 
     fetchAndLoadQuestions(){
@@ -13,40 +15,36 @@ class Questions {
             questions.forEach(question => this.questions.push(new Question(question)))
         })
         .then(() => {
+            // this.fetchAndLoadQuestions()
             this.newQuestion()
         })
     }
-    
+
     newQuestion() {
-        var randomNumber = Math.floor(Math.random() * (this.questions.length));
-        document.getElementById('questionDisplay').innerHTML = this.questions[randomNumber].content;
-        // console.log(this.questions[randomNumber])
+        var randomNumber = Math.floor(Math.random() * (this.questions.length - 1));
+        if (randomNumber > this.questions.length - 1) {
+            alert("You've seen all questions!");
+            done = true;
+        } else {
+            // console.log(this.questions);
+            document.getElementById('questionDisplay').innerHTML = this.questions[randomNumber].content;
+            // newQuestion();
+        }
     }
-//         if (questionNum >= questions.length) {
-//             alert("you've seen all questions");
-//             done = true;
-//         } else {
-//         document.getElementById("question").innerHTML = question[questionNum];
-//         }
-//     }
+    //     document.getElementById("button").addEventListener("click", function() {
+    //         if (done) {
+    //             return;
+    //         }
+    //         else
+    //             newQuestion();
+    //         });
+    //     }
+    // }
 
-// loadQuestion();
 
-// document.getElementById("next").addEventListener("click", function(e) {
-//     if (done) {
-//         return;
-//     }
-//     if (checkAnswer()) {
-//         ++numCorrect;
-//         document.getElementById("numCorrect").innerHTML = numCorrect;
-//         loadQuestion();
-//     } else {
-//         alert("Answer is not correct");
-//     }
-// });
-
-//     render() {
-//         const questionDisplay = document.getElementById('questionDisplay')
-//         questionDisplay.innerHTML = this.questions.map(question => `<li>${question.content}</li>`).join('')
-//     }
+    // render() {
+    //     var randomNumber = Math.floor(Math.random() * (this.questions.length));
+    //     const questionDisplay = document.getElementById('questionDisplay')
+    //     questionDisplay.innerHTML = this.questions[randomNumber].content;
+    // }
 }
