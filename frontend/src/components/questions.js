@@ -1,11 +1,16 @@
-var done = false;
+var done = false; 
 
 class Questions {
     constructor() {
         this.questions = []
         this.adapter = new QuestionsAdapter()
         this.fetchAndLoadQuestions()
-        // this.newQuestion()
+        this.initBindingsAndEventListeners()
+    }
+
+    initBindingsAndEventListeners() {
+        this.btn = document.getElementById("next")
+        this.btn.addEventListener("click", this.newQuestion.bind(this))
     }
 
     fetchAndLoadQuestions(){
@@ -15,7 +20,6 @@ class Questions {
             questions.forEach(question => this.questions.push(new Question(question)))
         })
         .then(() => {
-            // this.fetchAndLoadQuestions()
             this.newQuestion()
         })
     }
@@ -26,20 +30,17 @@ class Questions {
             alert("You've seen all questions!");
             done = true;
         } else {
-            // console.log(this.questions);
+            console.log(this.questions[randomNumber].content)
             document.getElementById('questionDisplay').innerHTML = this.questions[randomNumber].content;
-            // newQuestion();
         }
+
+        // document.getElementById("next").addEventListener("click", function(e) {
+        //     // alert("Hello World!");
+        //     console.log(this)
+        //     this.newQuestion().bind(this)
+        // })
     }
-    //     document.getElementById("button").addEventListener("click", function() {
-    //         if (done) {
-    //             return;
-    //         }
-    //         else
-    //             newQuestion();
-    //         });
-    //     }
-    // }
+}
 
 
     // render() {
@@ -47,4 +48,3 @@ class Questions {
     //     const questionDisplay = document.getElementById('questionDisplay')
     //     questionDisplay.innerHTML = this.questions[randomNumber].content;
     // }
-}
