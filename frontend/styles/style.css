@@ -13,7 +13,15 @@ body {
   }
   
   input {
-    font-size: 1.5em;
+    font-size: 1em;
+  }
+
+  .login-container {
+    font-size: .8em;
+  }
+  
+  .question-container {
+    font-size: .8em;
   }
   
   .container {
