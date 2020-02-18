@@ -30,7 +30,6 @@ class Questions {
             alert("You've seen all questions!");
             done = true;
         } else {
-            console.log(this.questions[randomNumber].content)
             document.getElementById('questionDisplay').innerHTML = this.questions[randomNumber].content;
         }
 
