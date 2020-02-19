@@ -3,14 +3,14 @@ class Users {
         this.users = []
         this.adapter = new UsersAdapter()
         this.fetchAndLoadUsers()
-        // this.initBindingsAndEventListeners()
+        this.initBindingsAndEventListeners()
     }
 
-    // initBindingsAndEventListeners(){
-    //     this.newUserName = document.getElementById('new-user-name')
-    //     this.userForm = document.getElementById('new-user-form')
-    //     this.userForm.addEventListener('submit', this.newUser.bind(this))
-    // }
+    initBindingsAndEventListeners(){
+        this.newUserName = document.getElementById('new-user-name')
+        this.userForm = document.getElementById('new-user-form')
+        this.userForm.addEventListener('submit', this.createUser.bind(this))
+    }
 
     fetchAndLoadUsers(){
         this.adapter
@@ -24,15 +24,13 @@ class Users {
     }
 
     render() {
-        console.log("helllllo")
         console.log(this.users)
-      }
+    }
 
-    // newUser(e){
-    //     e.preventDefault()
-    //     console.log("user is being created")
-        // this.questionForm.value
-        // const value = this.newQuestionContent.value
-        // this.adapter.createQuestion(value)
-    // }
+    createUser(e){
+        e.preventDefault()
+        console.log(this)
+        const value = this.newUserName.value
+        this.adapter.createUser(value)
+    }
 }

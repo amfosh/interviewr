@@ -6,4 +6,17 @@ class UsersAdapter {
     getUsers() {
         return fetch(this.baseUrl).then(res => res.json())
     }
+
+    createUser(value) {
+        const user = {
+            name: value
+        }
+        return fetch(this.baseUrl,{
+            method: 'POST',
+            headers: { 
+                'content-type': 'application/json',
+            },
+            name: JSON.stringify({ user })
+        })
+    }
 }

@@ -3,7 +3,7 @@ class Api::V1::UsersController < ApplicationController
     def index
         @users = User.all
     
-        render json: @users.to_json(include: [:game]), status: 200
+        render json: @users, status: 200
       end
     
     def show
@@ -13,6 +13,7 @@ class Api::V1::UsersController < ApplicationController
       end
 
     def create
+        binding.pry
         @user = User.create(user_params)
         if @user.save
             render json: @user, status: 200
