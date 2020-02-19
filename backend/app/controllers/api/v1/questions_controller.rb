@@ -11,6 +11,8 @@ class Api::V1::QuestionsController < ApplicationController
 
     def create
         @question = Question.new(question_params)
+        @user = User.find(params[:name])
+        @question.user = @user
         if @question.save
             render json: @question, status: 200
         end
