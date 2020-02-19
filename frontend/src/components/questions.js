@@ -20,7 +20,7 @@ class Questions {
     //     e.preventDefault()
     //     this.questionForm.value
     //     const value = this.newQuestionContent.value
-    //     this.adapter.createQuestion(value)
+    //     this.adapter.createQuestion(value).currentUser.id
     // }
 
     fetchAndLoadQuestions(){

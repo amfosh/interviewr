@@ -10,13 +10,23 @@
   <title>Interview Guide</title>
 </head>
 
+
 <center><body>
 
 <h1>Interviewr</h1>
     <div id="questionDisplay">
         <!--questions display here-->
     </div>
-    <button id="next">Next Question</button><br>
+    <button id="next">Next Question</button><br><br><br>
+
+
+    <div class ="login-container">
+        Login:
+        <form id="new-user-form">
+            <input type="text" name="name" id="new-user-name" placeholder="username"/>
+            <input type="submit" value="Login" id="login" name="login"/>
+        </form>
+    </div>
 
     <div class ="new-question-container">
         Add a new question:
@@ -25,13 +35,7 @@
               <input type="submit" value="Save question">
         </form>
     </div>
-    <div class ="login-container">
-    Login:
-        <form id="new-user-form">
-            <input type="text" name="name" id="new-user-name" placeholder="username"/>
-            <input type="submit" value="Login" id="login" name="login"/>
-        </form>
-    </div>
+
     <script src = "src/adapters/QuestionsAdapter.js"></script>
     <script src = "src/adapters/UsersAdapter.js"></script>
     <script src = "src/components/questions.js"></script>

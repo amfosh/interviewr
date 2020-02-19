@@ -7,13 +7,14 @@ class QuestionsAdapter {
         return fetch(this.baseUrl).then(res => res.json())
     }
 
-    // createQuestion(value) {
+    // createQuestion(value, id) {
     //     const question = {
-    //         content: value
+    //         content: value,
+            //user_id: id
     //     }
     //     return fetch(this.baseUrl, {
     //         method: 'POST'
-    //         body: JSON.stringify{( note )}
+    //         body: JSON.stringify{( question )}
     //     })
     // }
 }

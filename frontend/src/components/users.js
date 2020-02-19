@@ -32,7 +32,7 @@ class Users {
         console.log(this)
         const value = this.newUserName.value
         this.adapter.createUser(value).then(user => {
-            console.log(user)
+            localStorage.setItem("currentUser", user.id)
         })
     }
 }
