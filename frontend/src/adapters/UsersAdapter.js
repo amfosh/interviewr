@@ -9,14 +9,14 @@ class UsersAdapter {
 
     createUser(value) {
         const user = {
-            name: value
+            body: value
         }
-        return fetch(this.baseUrl,{
+        return fetch(this.baseUrl, {
             method: 'POST',
             headers: { 
                 'content-type': 'application/json',
             },
-            name: JSON.stringify({ user })
-        })
+            body: JSON.stringify({ user }),
+        }).then(res => res.json())
     }
 }

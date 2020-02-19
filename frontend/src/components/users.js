@@ -31,6 +31,8 @@ class Users {
         e.preventDefault()
         console.log(this)
         const value = this.newUserName.value
-        this.adapter.createUser(value)
+        this.adapter.createUser(value).then(user => {
+            console.log(user)
+        })
     }
 }

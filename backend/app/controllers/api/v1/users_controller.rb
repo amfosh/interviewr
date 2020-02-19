@@ -13,7 +13,6 @@ class Api::V1::UsersController < ApplicationController
       end
 
     def create
-        binding.pry
         @user = User.create(user_params)
         if @user.save
             render json: @user, status: 200
