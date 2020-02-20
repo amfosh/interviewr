@@ -6,6 +6,7 @@ class Api::V1::QuestionsController < ApplicationController
     end
 
     def create
+        binding.pry
         question = Question.new(question_params)
         user = User.find(params[:user_id])
         question.user = user

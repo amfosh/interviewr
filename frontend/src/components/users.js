@@ -24,12 +24,11 @@ class Users {
     }
 
     render() {
-        console.log(this.users)
+        console.log(localStorage)
     }
 
     createUser(e){
         e.preventDefault()
-        console.log(this)
         const value = this.newUserName.value
         this.adapter.createUser(value).then(user => {
             localStorage.setItem("currentUser", user.id)

@@ -12,16 +12,20 @@ class Questions {
         this.btn = document.getElementById("next")
         this.btn.addEventListener("click", this.newQuestion.bind(this))
         this.newQuestionContent = document.getElementById('new-question-content')
-        // this.questionForm = document.getElementById('new-question-form')
-        // this.questionForm.addEventListener('submit', this.createQuestion.bind(this))
+        this.questionForm = document.getElementById('new-question-form')
+        this.questionForm.addEventListener('submit', this.createQuestion.bind(this))
     }
 
-    // createQuestion(e){
-    //     e.preventDefault()
-    //     this.questionForm.value
-    //     const value = this.newQuestionContent.value
-    //     this.adapter.createQuestion(value).currentUser.id
-    // }
+    createQuestion(e){
+        e.preventDefault()
+        console.log("note being created")
+        // console.log(this.questionForm.value)
+        // const value = this.newQuestionContent.value
+        // const id = localStorage.getItem("currentUser")
+        // this.adapter.createQuestion(value, id)
+        // this.adapter.createUser(value).then(user => {
+        //     localStorage.setItem("currentUser", user.id)
+    }
 
     fetchAndLoadQuestions(){
         this.adapter
