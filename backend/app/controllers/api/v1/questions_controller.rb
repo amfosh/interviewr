@@ -6,9 +6,9 @@ class Api::V1::QuestionsController < ApplicationController
     end
 
     def create
-        binding.pry
+        # binding.pry
         question = Question.new(question_params)
-        user = User.find(params[:user_id])
+        user = User.find_by_id(params[:user_id])
         question.user = user
         if question.save
             render json: question, status: 200
@@ -18,6 +18,6 @@ class Api::V1::QuestionsController < ApplicationController
     private
 
     def question_params
-        params.require(:question).permit(:ask, :dont_ask, :user_id)
+        params.require(:question).permit(:content, :user_id)
     end
 end
