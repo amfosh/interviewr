@@ -14,6 +14,9 @@ class Questions {
         this.newQuestionContent = document.getElementById('new-question-content')
         this.questionForm = document.getElementById('new-question-form')
         this.questionForm.addEventListener('submit', this.createQuestion.bind(this))
+        this.questionDisp = document.getElementById('questionDisplay')
+        this.questionDisp.addEventListener('dblclick', this.handleQuestionClick.bind(this))
+        this.questionDisp.addEventListener('blur', this.updateQuestion.bind(this), true)
     }
 
     createQuestion(e){
@@ -45,4 +48,19 @@ class Questions {
             document.getElementById('questionDisplay').innerHTML = this.questions[randomNumber].content;
         }
     }
+
+    handleQuestionClick(e) {
+        const ques = e.target
+        ques.contentEditable = true
+        ques.focus()
+        ques.classList.add('editable')
+    }
+
+    updateQuestion(e) {
+        const ques = e.target
+        ques.contentEditable = false
+        ques.classList.remove('editable')
+    }
+
+
 }
