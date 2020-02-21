@@ -18,7 +18,6 @@ class Questions {
 
     createQuestion(e){
         e.preventDefault()
-        // console.log("note being created")
         const value = this.newQuestionContent.value
         const id = localStorage.getItem("currentUser")
         this.adapter.createQuestion(value, id)

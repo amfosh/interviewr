@@ -15,6 +15,14 @@ class Api::V1::QuestionsController < ApplicationController
         end
     end
 
+    def update
+        if params[:id] != 'undefined'
+            question = Question.find(params[:id])
+            question.update(question_params)
+            render json: question, status: 200
+        end
+    end
+
     private
 
     def question_params
