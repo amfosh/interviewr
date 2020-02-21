@@ -60,6 +60,8 @@ class Questions {
         const ques = e.target
         ques.contentEditable = false
         ques.classList.remove('editable')
+        const newValue = ques.innerHTML
+        // this.adapter.updateNote(newValue)
     }
 
 

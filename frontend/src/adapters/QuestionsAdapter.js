@@ -21,4 +21,19 @@ class QuestionsAdapter {
         })
         // .then(res => res.json())
     }
+
+    updateQuestion(value, id) {
+        const question = {
+            content: value,
+            user_id: id
+        }
+
+        return fetch(`${this.baseUrl}/id`,{
+            method: 'PATCH',
+            headers: { 
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ question }),
+        }).then(res => res.json())
+    }
 }
