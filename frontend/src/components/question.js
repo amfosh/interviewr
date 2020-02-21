@@ -10,4 +10,5 @@ class Question {
     questionHtml() {
         return `<p data-id="${this.id}">${this.content}</p>`
     }
+
 }

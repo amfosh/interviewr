@@ -24,8 +24,6 @@ class Questions {
         const value = this.newQuestionContent.value
         const id = localStorage.getItem("currentUser")
         this.adapter.createQuestion(value, id)
-        // this.adapter.createUser(value).then(user => {
-        //     localStorage.setItem("currentUser", user.id)
     }
 
     fetchAndLoadQuestions(){
@@ -39,14 +37,16 @@ class Questions {
         })
     }
 
+    // shuffleQuestions() {
+    //     for (let i = this.questions.length - 1; i > 0; i--) {
+    //     const j = Math.floor(Math.random() * (i + 1));
+    //     [this.questions[i], this.questions[j]] = [this.questions[j], this.questions[i]];
+    //     }
+    // }
+
     newQuestion() {
         var randomNumber = Math.floor(Math.random() * (this.questions.length - 1));
-        if (randomNumber > this.questions.length - 1) {
-            alert("You've seen all questions!");
-            done = true;
-        } else {
-            document.getElementById('questionDisplay').innerHTML = this.questions[randomNumber].questionHtml();
-        }
+        document.getElementById('questionDisplay').innerHTML = this.questions[randomNumber].questionHtml();
     }
 
     handleQuestionClick(e) {
