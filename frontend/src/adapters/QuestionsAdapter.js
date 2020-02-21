@@ -25,10 +25,9 @@ class QuestionsAdapter {
     updateQuestion(value, id) {
         const question = {
             content: value,
-            user_id: id
         }
 
-        return fetch(`${this.baseUrl}/id`,{
+        return fetch(`${this.baseUrl}/${id}`,{
             method: 'PATCH',
             headers: { 
                 'content-type': 'application/json'

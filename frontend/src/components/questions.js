@@ -45,7 +45,7 @@ class Questions {
             alert("You've seen all questions!");
             done = true;
         } else {
-            document.getElementById('questionDisplay').innerHTML = this.questions[randomNumber].content;
+            document.getElementById('questionDisplay').innerHTML = this.questions[randomNumber].questionHtml();
         }
     }
 
@@ -61,7 +61,8 @@ class Questions {
         ques.contentEditable = false
         ques.classList.remove('editable')
         const newValue = ques.innerHTML
-        // this.adapter.updateNote(newValue)
+        const id = ques.dataset.id
+        this.adapter.updateQuestion(newValue, id)
     }
 
 

@@ -6,4 +6,8 @@ class Question {
         this.dont_ask = questionJSON.dont_ask
         this.user = questionJSON.user_id
     }
+
+    questionHtml() {
+        return `<p data-id="${this.id}">${this.content}</p>`
+    }
 }
