@@ -10,30 +10,39 @@
   <title>Interview Guide</title>
 </head>
 
+
 <center><body>
 
 <h1>Interviewr</h1>
     <div id="questionDisplay">
         <!--questions display here-->
     </div>
-    <button id="next">Next Question</button>
-    <!-- <button onclick="newQuestion()">Ask</button> -->
-    <div class ="question-container">
-        <form>
-            Add a question:<form id="new-question-form"><input type="text"/><input type="submit"/>
-        </form>
-    </div>
+    <button id="next">Next Question</button><br><br><br>
+
+
     <div class ="login-container">
-    Login:
-        <form action="/users/create" method="post">
-            <input type="text" id="name" placeholder="Username"/>
-            <input type="button" value="Login" id="login" name="login"/>
+        Login:
+        <form id="new-user-form">
+            <input type="text" name="name" id="new-user-name" placeholder="username"/>
+            <input type="submit" value="Login" id="login" name="login"/>
         </form>
     </div>
-    <script src = "src/components/questions.js"></script>
-    <script type="text/javascript" src="src/components/question.js"></script>
-    <script src = "src/components/app.js" ></script>
+
+    <div class ="new-question-container">
+        Add a new question:
+        <form id="new-question-form">
+              <input type="text" name="question-content" id="new-question-content">
+              <input type="submit" value="Save question">
+        </form>
+    </div>
+
     <script src = "src/adapters/QuestionsAdapter.js"></script>
+    <script src = "src/adapters/UsersAdapter.js"></script>
+    <script src = "src/components/questions.js"></script>
+    <script src = "src/components/users.js"></script>
+    <script type="text/javascript" src="src/components/question.js"></script>
+    <script type="text/javascript" src="src/components/user.js"></script>
+    <script src = "src/components/app.js" ></script>
     <script src = "src/index.js"> </script>
 </body>
 </html>

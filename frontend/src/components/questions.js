@@ -11,6 +11,18 @@ class Questions {
     initBindingsAndEventListeners() {
         this.btn = document.getElementById("next")
         this.btn.addEventListener("click", this.newQuestion.bind(this))
+        this.newQuestionContent = document.getElementById('new-question-content')
+        this.questionForm = document.getElementById('new-question-form')
+        this.questionForm.addEventListener('submit', this.createQuestion.bind(this))
+    }
+
+    createQuestion(e){
+        e.preventDefault()
+        const value = this.newQuestionContent.value
+        const id = localStorage.getItem("currentUser")
+        this.adapter.createQuestion(value, id)
+        // this.adapter.createUser(value).then(user => {
+        //     localStorage.setItem("currentUser", user.id)
     }
 
     fetchAndLoadQuestions(){
@@ -32,18 +44,5 @@ class Questions {
         } else {
             document.getElementById('questionDisplay').innerHTML = this.questions[randomNumber].content;
         }
-
-        // document.getElementById("next").addEventListener("click", function(e) {
-        //     // alert("Hello World!");
-        //     console.log(this)
-        //     this.newQuestion().bind(this)
-        // })
     }
 }
-
-
-    // render() {
-    //     var randomNumber = Math.floor(Math.random() * (this.questions.length));
-    //     const questionDisplay = document.getElementById('questionDisplay')
-    //     questionDisplay.innerHTML = this.questions[randomNumber].content;
-    // }

@@ -17,8 +17,10 @@ body {
   }
 
   .login-container {
-    font-size: .8em;
-  }
+    float:right;
+    display: bottom;
+    width: 200px;
+}
   
   .question-container {
     font-size: .8em;
