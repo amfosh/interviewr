@@ -29,17 +29,19 @@ class Users {
 
     createUser(e){
         e.preventDefault()
-        console.log('e.target: ', e.target.childNodes[1].value)
-        const value = this.newUserName.value
-        this.adapter.createUser(value).then(user => {
-            localStorage.setItem("currentUser", user.id)
-        })
-        // this.userForm.value = ""
-        //     btn.setAttribute('value', 'Logout')
-        // } else {
-        //     localStorage.clear()
-        //     location.reload()
-        //     btn.setAttribute('value', 'Login')
-        // }
+        const btn = e.target.childNodes[3]
+        const btnText = e.target.childNodes[3].value
+        if (btnText == 'Login') {
+            const value = this.newUserName.value
+            this.adapter.createUser(value).then(user => {
+                localStorage.setItem("currentUser", user.id)
+            })
+            this.userForm.value = ""
+            btn.setAttribute('value', 'Logout')
+        } else {
+            localStorage.clear()
+            location.reload()
+            btn.setAttribute('value', 'Login')
+        }
     }
 }
