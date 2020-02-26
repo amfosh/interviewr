@@ -17,6 +17,7 @@ class Questions {
         this.questionDisp = document.getElementById('questionDisplay')
         this.questionDisp.addEventListener('dblclick', this.handleQuestionClick.bind(this))
         this.questionDisp.addEventListener('blur', this.updateQuestion.bind(this), true)
+        this.counter = 0
     }
 
     createQuestion(e){
@@ -43,12 +44,15 @@ class Questions {
         const j = Math.floor(Math.random() * (i + 1));
         [this.questions[i], this.questions[j]] = [this.questions[j], this.questions[i]];
         }
-        console.log(this.questions)
     }
 
     newQuestion() {
-        var randomNumber = Math.floor(Math.random() * (this.questions.length - 1));
-        document.getElementById('questionDisplay').innerHTML = this.questions[randomNumber].questionHtml();
+        if (this.counter < this.questions.length) {
+            document.getElementById('questionDisplay').innerHTML = this.questions[this.counter].questionHtml();
+            this.counter++
+        } else {
+            alert("You've seen all of the questions!")
+        }
     }
 
     handleQuestionClick(e) {
