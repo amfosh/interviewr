@@ -33,16 +33,18 @@ class Questions {
             questions.forEach(question => this.questions.push(new Question(question)))
         })
         .then(() => {
+            this.shuffleQuestions()
             this.newQuestion()
         })
     }
 
-    // shuffleQuestions() {
-    //     for (let i = this.questions.length - 1; i > 0; i--) {
-    //     const j = Math.floor(Math.random() * (i + 1));
-    //     [this.questions[i], this.questions[j]] = [this.questions[j], this.questions[i]];
-    //     }
-    // }
+    shuffleQuestions() {
+        for (let i = this.questions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [this.questions[i], this.questions[j]] = [this.questions[j], this.questions[i]];
+        }
+        console.log(this.questions)
+    }
 
     newQuestion() {
         var randomNumber = Math.floor(Math.random() * (this.questions.length - 1));
