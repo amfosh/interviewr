@@ -24,7 +24,11 @@ class Questions {
         e.preventDefault()
         const value = this.newQuestionContent.value
         const id = localStorage.getItem("currentUser")
-        this.adapter.createQuestion(value, id)
+        if (localStorage.length > 0) {
+            this.adapter.createQuestion(value, id)
+        } else { 
+            alert("You must be logged in to add or edit a question!")
+        }
     }
 
     fetchAndLoadQuestions(){
