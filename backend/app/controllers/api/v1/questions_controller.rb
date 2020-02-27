@@ -6,9 +6,8 @@ class Api::V1::QuestionsController < ApplicationController
     end
 
     def create
-        # binding.pry
         question = Question.new(question_params)
-        user = User.find_by_id(params[:user_id])
+        user = User.find_by(params[:user_id])
         question.user = user
         if question.save
             render json: question, status: 200
