@@ -10,8 +10,8 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
-gem 'devise'
-gem 'devise-jwt', '~> 0.5.8'
+# gem 'devise'
+# gem 'devise-jwt'
 gem 'pry'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
