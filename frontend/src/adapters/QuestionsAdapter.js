@@ -1,6 +1,6 @@
 class QuestionsAdapter {
     constructor() {
-        this.baseUrl = 'https://interviewr-api.herokuapp.com/'
+        this.baseUrl = 'https://interviewr-api.herokuapp.com/api/v1/questions'
     }
 
     getQuestions() {
