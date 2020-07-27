@@ -16,26 +16,31 @@
 <!-- <center> -->
 <body>
     <h1>Interviewr</h1>
-    <div id="questionDisplay">
-        <!--questions display here-->
-    </div>
-    <button id="next">Next Question</button><br><br><br>
-
-
-    <div class ="login-container">
-        Login:
-        <form id="new-user-form">
-            <input type="text" name="name" id="new-user-name" placeholder="username"/>
-            <input type="submit" value="Login" id="login" name="login"/>
-        </form>
+    <h2>A question generator for interviewers</h2>
+    <div id="question">
+        <div id="questionDisplay">
+            <!--questions display here-->
+        </div>
+        <button id="next">Next Question</button><br>
     </div>
 
-    <div class ="new-question-container">
-        Add a new question:
-        <form id="new-question-form">
-              <input type="text" name="question-content" id="new-question-content">
-              <input type="submit" value="Save question">
-        </form>
+    <div class ="wrapper">
+        <div class ="login-container">
+            Login:
+            <form id="new-user-form">
+                <input type="text" name="name" id="new-user-name" placeholder="username"/>
+                <input type="submit" value="Login" id="login" name="login"/>
+            </form>
+        </div>
+    
+
+        <div class ="new-question-container">
+            Add a new question:
+            <form id="new-question-form">
+                <input type="text" name="question-content" id="new-question-content">
+                <input type="submit" value="Save question">
+            </form>
+        </div>
     </div>
 
     <script src = "src/adapters/QuestionsAdapter.js"></script>

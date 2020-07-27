@@ -2,40 +2,62 @@ body {
     text-align: center;
     font-family: 'Archivo Narrow';
     font-weight: 300;
-    line-height: 1.6em;
+    line-height: 1.5em;
     font-size: 1.3em;
-    max-width: 500px;
+    width: 100vw;
     margin: 0 auto;
   }
 
   h1 {
     font-family: 'Archivo Narrow';
     font-size: 72px;
+    margin-bottom: 0px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-style: italic;
   }
   
+  #question {
+    margin: 50px;
+  }
+
   a {
     color: #097659;
+  }
+
+  p {
+    margin: 0px;
   }
   
   input {
     font-size: 1em;
   }
+
+  button, form {
+    font-family: 'Archivo Narrow';
+    font-size: 14px;
+  }
+
+  input[type=text] {
+    margin-left: 12px;
+  }
+
+  input[type=submit], input[type=text] {
+    font-family: 'Archivo Narrow';
+    font-size: 14px;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center stretch;
+    justify-content: center;
+  }
   
   #questionDisplay {
       font-size: 25px;
-    }
-
-  .login-container {
-    float:right;
-    display: bottom;
-    width: 200px;
-}
-  
-  .question-container {
-    font-size: .8em;
-    float:left;
-    display: bottom;
-    width: 200px;
   }
   
   .container {
